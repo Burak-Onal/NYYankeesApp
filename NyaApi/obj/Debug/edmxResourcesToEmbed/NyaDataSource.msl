@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="nya_exampleModelStoreContainer" CdmEntityContainer="nya_exampleEntities">
+    <EntitySetMapping Name="bstatsplayersseasonsbyteams">
+      <EntityTypeMapping TypeName="nya_exampleModel.bstatsplayersseasonsbyteam">
+        <MappingFragment StoreEntitySet="bstatsplayersseasonsbyteam">
+          <ScalarProperty Name="playerid" ColumnName="playerid" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="teamid" ColumnName="teamid" />
+          <ScalarProperty Name="g" ColumnName="g" />
+          <ScalarProperty Name="ab" ColumnName="ab" />
+          <ScalarProperty Name="b1" ColumnName="b1" />
+          <ScalarProperty Name="b2" ColumnName="b2" />
+          <ScalarProperty Name="b3" ColumnName="b3" />
+          <ScalarProperty Name="hr" ColumnName="hr" />
+          <ScalarProperty Name="ubb" ColumnName="ubb" />
+          <ScalarProperty Name="hbp" ColumnName="hbp" />
+          <ScalarProperty Name="so" ColumnName="so" />
+          <ScalarProperty Name="ci" ColumnName="ci" />
+          <ScalarProperty Name="ibb" ColumnName="ibb" />
+          <ScalarProperty Name="sh" ColumnName="sh" />
+          <ScalarProperty Name="sf" ColumnName="sf" />
+          <ScalarProperty Name="sb" ColumnName="sb" />
+          <ScalarProperty Name="cs" ColumnName="cs" />
+          <ScalarProperty Name="pa" ColumnName="pa" />
+          <ScalarProperty Name="r" ColumnName="r" />
+          <ScalarProperty Name="rbi" ColumnName="rbi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="levels">
+      <EntityTypeMapping TypeName="nya_exampleModel.level">
+        <MappingFragment StoreEntitySet="levels">
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="abbr" ColumnName="abbr" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sortorder" ColumnName="sortorder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="players">
+      <EntityTypeMapping TypeName="nya_exampleModel.player">
+        <MappingFragment StoreEntitySet="players">
+          <ScalarProperty Name="playerid" ColumnName="playerid" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="usesname" ColumnName="usesname" />
+          <ScalarProperty Name="bats" ColumnName="bats" />
+          <ScalarProperty Name="throws" ColumnName="throws" />
+          <ScalarProperty Name="teamid" ColumnName="teamid" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="birthcity" ColumnName="birthcity" />
+          <ScalarProperty Name="birthcountry" ColumnName="birthcountry" />
+          <ScalarProperty Name="birthstate" ColumnName="birthstate" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="headshoturl" ColumnName="headshoturl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pstatsplayersseasonsbyteams">
+      <EntityTypeMapping TypeName="nya_exampleModel.pstatsplayersseasonsbyteam">
+        <MappingFragment StoreEntitySet="pstatsplayersseasonsbyteam">
+          <ScalarProperty Name="playerid" ColumnName="playerid" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="levelid" ColumnName="levelid" />
+          <ScalarProperty Name="teamid" ColumnName="teamid" />
+          <ScalarProperty Name="g" ColumnName="g" />
+          <ScalarProperty Name="ab" ColumnName="ab" />
+          <ScalarProperty Name="b1" ColumnName="b1" />
+          <ScalarProperty Name="b2" ColumnName="b2" />
+          <ScalarProperty Name="b3" ColumnName="b3" />
+          <ScalarProperty Name="hr" ColumnName="hr" />
+          <ScalarProperty Name="ubb" ColumnName="ubb" />
+          <ScalarProperty Name="hbp" ColumnName="hbp" />
+          <ScalarProperty Name="so" ColumnName="so" />
+          <ScalarProperty Name="ibb" ColumnName="ibb" />
+          <ScalarProperty Name="sh" ColumnName="sh" />
+          <ScalarProperty Name="sf" ColumnName="sf" />
+          <ScalarProperty Name="pa" ColumnName="pa" />
+          <ScalarProperty Name="r" ColumnName="r" />
+          <ScalarProperty Name="outs" ColumnName="outs" />
+          <ScalarProperty Name="er" ColumnName="er" />
+          <ScalarProperty Name="gs" ColumnName="gs" />
+          <ScalarProperty Name="gf" ColumnName="gf" />
+          <ScalarProperty Name="cg" ColumnName="cg" />
+          <ScalarProperty Name="sho" ColumnName="sho" />
+          <ScalarProperty Name="w" ColumnName="w" />
+          <ScalarProperty Name="l" ColumnName="l" />
+          <ScalarProperty Name="sv" ColumnName="sv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="nya_exampleModel.team">
+        <MappingFragment StoreEntitySet="teams">
+          <ScalarProperty Name="teamid" ColumnName="teamid" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="abbr" ColumnName="abbr" />
+          <ScalarProperty Name="leagueid" ColumnName="leagueid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

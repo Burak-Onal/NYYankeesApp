@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="nya_exampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bstatsplayersseasonsbyteam">
+    <Key>
+      <PropertyRef Name="playerid" />
+      <PropertyRef Name="yearid" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="teamid" />
+    </Key>
+    <Property Name="playerid" Type="Int32" Nullable="false" />
+    <Property Name="yearid" Type="Int16" Nullable="false" />
+    <Property Name="levelid" Type="Byte" Nullable="false" />
+    <Property Name="teamid" Type="Int16" Nullable="false" />
+    <Property Name="g" Type="Int16" Nullable="false" />
+    <Property Name="ab" Type="Int16" Nullable="false" />
+    <Property Name="b1" Type="Int16" Nullable="false" />
+    <Property Name="b2" Type="Int16" Nullable="false" />
+    <Property Name="b3" Type="Int16" Nullable="false" />
+    <Property Name="hr" Type="Int16" Nullable="false" />
+    <Property Name="ubb" Type="Int16" Nullable="false" />
+    <Property Name="hbp" Type="Int16" Nullable="false" />
+    <Property Name="so" Type="Int16" Nullable="false" />
+    <Property Name="ci" Type="Int16" Nullable="false" />
+    <Property Name="ibb" Type="Int16" Nullable="false" />
+    <Property Name="sh" Type="Int16" Nullable="false" />
+    <Property Name="sf" Type="Int16" Nullable="false" />
+    <Property Name="sb" Type="Int16" Nullable="false" />
+    <Property Name="cs" Type="Int16" Nullable="false" />
+    <Property Name="pa" Type="Int16" Nullable="false" />
+    <Property Name="r" Type="Int16" Nullable="false" />
+    <Property Name="rbi" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="level">
+    <Key>
+      <PropertyRef Name="levelid" />
+    </Key>
+    <Property Name="levelid" Type="Byte" Nullable="false" />
+    <Property Name="abbr" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sortorder" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="player">
+    <Key>
+      <PropertyRef Name="playerid" />
+    </Key>
+    <Property Name="playerid" Type="Int32" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usesname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bats" Type="Byte" Nullable="false" />
+    <Property Name="throws" Type="Byte" Nullable="false" />
+    <Property Name="teamid" Type="Int16" />
+    <Property Name="birthdate" Type="DateTime" Precision="3" />
+    <Property Name="birthcity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="birthcountry" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="birthstate" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="Byte" />
+    <Property Name="weight" Type="Int16" />
+    <Property Name="position" Type="Byte" Nullable="false" />
+    <Property Name="number" Type="Byte" />
+    <Property Name="headshoturl" Type="String" MaxLength="59" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="pstatsplayersseasonsbyteam">
+    <Key>
+      <PropertyRef Name="playerid" />
+      <PropertyRef Name="yearid" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="teamid" />
+    </Key>
+    <Property Name="playerid" Type="Int32" Nullable="false" />
+    <Property Name="yearid" Type="Int16" Nullable="false" />
+    <Property Name="levelid" Type="Byte" Nullable="false" />
+    <Property Name="teamid" Type="Int16" Nullable="false" />
+    <Property Name="g" Type="Int16" Nullable="false" />
+    <Property Name="ab" Type="Int16" Nullable="false" />
+    <Property Name="b1" Type="Int16" Nullable="false" />
+    <Property Name="b2" Type="Int16" Nullable="false" />
+    <Property Name="b3" Type="Int16" Nullable="false" />
+    <Property Name="hr" Type="Int16" Nullable="false" />
+    <Property Name="ubb" Type="Int16" Nullable="false" />
+    <Property Name="hbp" Type="Int16" Nullable="false" />
+    <Property Name="so" Type="Int16" Nullable="false" />
+    <Property Name="ibb" Type="Int16" Nullable="false" />
+    <Property Name="sh" Type="Int16" Nullable="false" />
+    <Property Name="sf" Type="Int16" Nullable="false" />
+    <Property Name="pa" Type="Int16" Nullable="false" />
+    <Property Name="r" Type="Int16" Nullable="false" />
+    <Property Name="outs" Type="Int16" Nullable="false" />
+    <Property Name="er" Type="Int16" Nullable="false" />
+    <Property Name="gs" Type="Int16" Nullable="false" />
+    <Property Name="gf" Type="Int16" Nullable="false" />
+    <Property Name="cg" Type="Int16" Nullable="false" />
+    <Property Name="sho" Type="Int16" Nullable="false" />
+    <Property Name="w" Type="Int16" Nullable="false" />
+    <Property Name="l" Type="Int16" Nullable="false" />
+    <Property Name="sv" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="team">
+    <Key>
+      <PropertyRef Name="teamid" />
+    </Key>
+    <Property Name="teamid" Type="Int16" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="abbr" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="leagueid" Type="Int16" />
+  </EntityType>
+  <EntityContainer Name="nya_exampleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bstatsplayersseasonsbyteams" EntityType="Self.bstatsplayersseasonsbyteam" />
+    <EntitySet Name="levels" EntityType="Self.level" />
+    <EntitySet Name="players" EntityType="Self.player" />
+    <EntitySet Name="pstatsplayersseasonsbyteams" EntityType="Self.pstatsplayersseasonsbyteam" />
+    <EntitySet Name="teams" EntityType="Self.team" />
+  </EntityContainer>
+</Schema>

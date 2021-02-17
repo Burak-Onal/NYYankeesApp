@@ -1,0 +1,4 @@
+﻿<span class="team-list-item" ng-repeat="team in data.teams" ng-class-odd="'team-odd'" ng-class-even="'team-even'">
+    <a ui-sref="playerList" href="#" ng-click="GetPlayerList(team)" >{{ team.name }}</a>
+</span>
+<div class="load-more"><a ng-click="teamList.LoadMore()" >Load More Teams ...</a></div>

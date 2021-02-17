@@ -1,0 +1,108 @@
+﻿<div class="container-fluid">
+    <h1>{{data.selectedTeamName}}</h1>
+        <div class="container-fluid">
+            <div class="row table-bordered">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">#</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Name</div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">B/T</div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Height</div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Weight</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">DOB</div>
+            </div>
+            <div ng-repeat="player in data.players" class="row table-bordered" ng-class-odd="'team-odd'" ng-class-even="'team-even'">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{ player.number }} </a></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><img ng-src="{{ player.headshoturl }}" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal" class="simg" /></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{ player.firstname }} {{ player.lastname }}</a></div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{player.bats}}/{{player.throws}}</a></div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{ player.height }}</a></div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{ player.weight }}</a></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><a href="#" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal">{{ player.birthdate | date }}</a></div>
+            </div>
+        </div>
+    <a ng-click="playerList.LoadMore()" ng-if="data.displayLoadMorePlayers" class="load-more">Load More Players...</a>
+</div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{data.selectedPlayer.firstname}} {{data.selectedPlayer.lastname}}</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <img ng-src="{{ data.selectedPlayer.headshoturl }}" ng-click="GetPlayerStats(player)" data-toggle="modal" data-target="#myModal" class="simg" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <h1>Position: {{ data.selectedPlayer.position }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid" ng-if="data.selectedPlayer.position >= 2 && data.selectedPlayer.position <= 10">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Year</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Games</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">At-Bats</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Hits</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Strike-Outs</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Walks</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">AVG</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">OBP</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">SLG</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">OPS</div>
+                        </div>
+                        <div class="row table-bordered" ng-class-odd="'team-odd'" ng-class-even="'team-even'" ng-repeat="stats in playerStats">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Year }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Games }}</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">{{ stats.AtBats }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Hits }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.StrikeOuts }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Walks }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.AVG }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.OBP }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.SLG | number : 2 }}</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">{{ stats.OPS | number: 2}}</div>
+                        </div>
+                    </div>
+
+
+                    <div class="container-fluid" ng-if="data.selectedPlayer.position < 2 || data.selectedPlayer.position > 10">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Year</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Games</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Games Started</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">W-L-S</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Innings Pitched</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Hits</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Strike-Outs</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">Walks</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">ERA</div>
+                        </div>
+                        <div class="row table-bordered" ng-class-odd="'team-odd'" ng-class-even="'team-even'" ng-repeat="stats in playerStats">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Year }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Games }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.GamesStarted }}</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">{{ stats.WinsLosesSaves }}</div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">{{ stats.InningsPitched }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Hits }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.StrikeOuts }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.Walks }}</div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">{{ stats.ERA | number : 2}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
